@@ -5,7 +5,7 @@ import config from '../config';
 
 @Controller('/weather-template')
 export class WeatherTemplateController {
-  private readonly templateId = 'uL_-7D0GGnCm8Saj06NmX8Sn0oPjtF_USdO8zAHQ1Rg';
+  private readonly templateId = config.templates.weather;
   constructor(private readonly service: WeatherService) {}
 
   @Post()

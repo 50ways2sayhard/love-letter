@@ -19,4 +19,8 @@ export default {
 
   // 微信用户 openID
   userOpenIds: ['openID1', 'openID2'],
+  templates: {
+    daily: 'templateId1',
+    weather: 'templateId2',
+  },
 };

@@ -4,7 +4,7 @@ import { generateTemplateMessage, sendTemplate } from '../utils/template-utils';
 
 @Controller('/daily-template')
 export class DailyTemplateController {
-  private readonly templateId = 'u7TrpqcNsQGBQ5AZm3E03yxpJPrpdys4RhxhHpkKvIg';
+  private readonly templateId = config.templates.daily;
   @Post()
   send() {
     // TODO: cache weather and holiday data
