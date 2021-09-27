@@ -1,4 +1,3 @@
-import { StringOrUndefined } from './base';
 export interface JuHeApiResult<T> {
   error_code: number;
   reason: string;
@@ -23,26 +22,26 @@ export interface JuHeHolidayInfo {
   week: string;
   statusDesc: '节假日' | '工作日' | '周末';
   status: 1 | 2 | null;
-  animal: StringOrUndefined;
-  aviod: StringOrUndefined;
-  cnDay: StringOrUndefined;
-  day: StringOrUndefined;
-  desc: StringOrUndefined;
-  gzDate: StringOrUndefined;
-  gzMonth: StringOrUndefined;
-  gzYear: StringOrUndefined;
-  isBidMonth: StringOrUndefined;
-  lDate: StringOrUndefined;
-  lMonth: StringOrUndefined;
-  lunarDate: StringOrUndefined;
-  lunaYear: StringOrUndefined;
-  month: StringOrUndefined;
-  oDate: StringOrUndefined;
-  suit: StringOrUndefined;
-  term: StringOrUndefined;
-  type: StringOrUndefined;
-  value: StringOrUndefined;
-  year: StringOrUndefined;
+  animal?: string;
+  aviod?: string;
+  cnDay?: string;
+  day?: string;
+  desc?: string;
+  gzDate?: string;
+  gzMonth?: string;
+  gzYear?: string;
+  isBidMonth?: string;
+  lDate?: string;
+  lMonth?: string;
+  lunarDate?: string;
+  lunaYear?: string;
+  month?: string;
+  oDate?: string;
+  suit?: string;
+  term?: string;
+  type?: string;
+  value?: string;
+  year?: string;
 }
 
 interface _JuHeHolidayStatus {
@@ -68,20 +67,20 @@ export interface JuHeRecentHolidays {
 }
 
 export interface JuHeRealTimeWeather {
-  info: StringOrUndefined;
-  wid: StringOrUndefined;
-  temperature: StringOrUndefined;
-  humidity: StringOrUndefined;
-  direct: StringOrUndefined;
-  power: StringOrUndefined;
-  aqi: StringOrUndefined;
+  info?: string;
+  wid?: string;
+  temperature?: string;
+  humidity?: string;
+  direct?: string;
+  power?: string;
+  aqi?: string;
 }
 
 export interface JuHeFutureWeather {
-  date: StringOrUndefined;
-  temperature: StringOrUndefined;
-  weather: StringOrUndefined;
-  direct: StringOrUndefined;
+  date?: string;
+  temperature?: string;
+  weather?: string;
+  direct?: string;
 }
 
 export interface JuHeWeather {

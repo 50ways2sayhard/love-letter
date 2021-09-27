@@ -1,5 +1,3 @@
-import { StringOrUndefined } from './base';
-
 export type TemplateMessageItem = {
   value: string | number;
   color?: string;
