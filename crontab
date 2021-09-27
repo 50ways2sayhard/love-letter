@@ -1,0 +1,2 @@
+0 8 * * * curl -X POST localhost:3000/daily-template
+0 6,12,17 * * * curl -X POST localhost:3000/weather-template
