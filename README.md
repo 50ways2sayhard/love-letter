@@ -1,30 +1,56 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Love-Letter
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+用于给你的他 / 她推送微信提醒的服务。
+
+## Precondition
+
+### 申请聚合数据 API Key
+
+* [天气预报](https://www.juhe.cn/docs/api/id/73)
+* [万年历](https://www.juhe.cn/docs/api/id/73)
+* [节假日信息查询](https://www.juhe.cn/docs/api/id/606)
+
+### 申请彩云天气 API
+
+* [彩云 API](https://caiyunapp.com/api/weather)
+
+### 添加模板
+
+每日提醒模板：
+```
+❤️ 亲爱的{{toLover.DATA}}，早上好~
+📆 今天是{{today.DATA}}, {{weekday.DATA}}
+💕 我们在一起已经{{loverdays.DATA}}天~
+🎂 还有 {{daysUntilBirthday.DATA}} 天就要过生日啦
+💰 离发工资还有 {{daysUntilSalary.DATA}} 天嗷
+👵 离退休还有 {{daysUntilRetire.DATA}} 天哦
+🎊 今年剩余假期：
+{{remainHolidays.DATA}}
+今天也是元气满满的一天，加油吧！
+```
+
+天气提醒模板：
+```
+⏰ 现在是 {{current.DATA}}, 开始播报天气啦~
+🌡 当前气温 {{temperature.DATA}}℃, 体感温度{{apparent_temperature.DATA}}℃
+☔️ 现在{{local_precipitation.DATA}}, 最近降雨在{{nearest_precipition.DATA}} 公里外
+🌈 当前空气质量: {{air_quality.DATA}}
+👕 穿衣指数 {{comfort.DATA}}
+🔔 {{suggestion.DATA}}
+```
+
+### 生成并填写配置
+
+生成配置：
+
+```bash
+$ mv src/config-example.ts src/config.ts
+```
+
+然后按照注释填写信息即可。
+
 
 ## Installation
 
@@ -45,29 +71,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Road Map
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+1. 优化代码
+2. 添加数据库和缓存
+3. 更多消息模板支持
