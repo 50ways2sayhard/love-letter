@@ -22,5 +22,6 @@ export default {
   templates: {
     daily: 'templateId1',
     weather: 'templateId2',
+    holiday: 'templateId3',
   },
 };
