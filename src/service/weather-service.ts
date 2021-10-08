@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { getCaiyunRealTimeWeather } from 'src/request/weather';
-import { CaiyunRealtimeWeather } from 'src/types/weather';
-import { generateMessageItem, sendTemplate } from 'src/utils/template-utils';
 import * as dayjs from 'dayjs';
+import { getCaiyunRealTimeWeather } from 'src/request/weather';
+import { TemplateMessageItem } from 'src/types/template-message';
+import { CaiyunRealtimeWeather } from 'src/types/weather';
+import { generateMessageItem } from 'src/utils/template-utils';
 
 @Injectable()
 export class WeatherService {
@@ -12,7 +13,9 @@ export class WeatherService {
     return getCaiyunRealTimeWeather(cityPosition);
   }
 
-  generateTemplate(realtimeWeather: CaiyunRealtimeWeather) {
+  generateTemplate(
+    realtimeWeather: CaiyunRealtimeWeather,
+  ): Record<string, TemplateMessageItem> {
     const ret = {};
     const now = dayjs();
 

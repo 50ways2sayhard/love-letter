@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, HttpCode, Post } from '@nestjs/common';
 import { WeatherService } from 'src/service/weather-service';
 import { sendTemplate } from 'src/utils/template-utils';
 import config from '../config';
@@ -9,7 +9,8 @@ export class WeatherTemplateController {
   constructor(private readonly service: WeatherService) {}
 
   @Post()
-  send(): string {
+  @HttpCode(204)
+  send() {
     this.service.queryRealtimeWeather(config.cityPosition).then((weather) => {
       const template = this.service.generateTemplate(weather);
       config.userOpenIds.forEach((openId) => {
@@ -19,6 +20,5 @@ export class WeatherTemplateController {
         });
       });
     });
-    return 'ok';
   }
 }
