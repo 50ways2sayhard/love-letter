@@ -1,16 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import * as dayjs from 'dayjs';
+import { TemplateMessageItem } from 'src/types/template-message';
 import {
   daysBetween,
   daysBetweenThisOrNextYear,
   getWeekday,
 } from '../utils/date-utils';
-import { queryRemainHolidayAfterDate } from '../utils/holiday-utils';
 import { generateMessageItem } from '../utils/template-utils';
 
 @Injectable()
 export class DailyRemindService {
-  async generateTemplate(cfg: Record<string, any>): Promise<any> {
+  generateTemplate(
+    cfg: Record<string, any>,
+  ): Record<string, TemplateMessageItem> {
     const now = dayjs();
     const ret = {};
 
@@ -36,14 +38,6 @@ export class DailyRemindService {
     ret['daysUntilRetire'] = generateMessageItem(
       daysBetween(now, dayjs(cfg.retireDate)),
     );
-
-    // 剩余节假日
-    const remainHolidays = await queryRemainHolidayAfterDate(dayjs());
-    const holidayStrs = [];
-    remainHolidays.forEach((holiday) => {
-      holidayStrs.push(`- ${holiday.startday} ${holiday.name}`);
-    });
-    ret['remainHolidays'] = generateMessageItem(holidayStrs.join('\n'));
 
     return ret;
   }
