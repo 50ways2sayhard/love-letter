@@ -8,17 +8,18 @@
 
 ### 申请聚合数据 API Key
 
-* [天气预报](https://www.juhe.cn/docs/api/id/73)
-* [万年历](https://www.juhe.cn/docs/api/id/73)
-* [节假日信息查询](https://www.juhe.cn/docs/api/id/606)
+- [天气预报](https://www.juhe.cn/docs/api/id/73)
+- [万年历](https://www.juhe.cn/docs/api/id/73)
+- [节假日信息查询](https://www.juhe.cn/docs/api/id/606)
 
 ### 申请彩云天气 API
 
-* [彩云 API](https://caiyunapp.com/api/weather)
+- [彩云 API](https://caiyunapp.com/api/weather)
 
 ### 添加模板
 
 每日提醒模板：
+
 ```
 ❤️ 亲爱的{{toLover.DATA}}，早上好~
 📆 今天是{{today.DATA}}, {{weekday.DATA}}
@@ -26,12 +27,11 @@
 🎂 还有 {{daysUntilBirthday.DATA}} 天就要过生日啦
 💰 离发工资还有 {{daysUntilSalary.DATA}} 天嗷
 👵 离退休还有 {{daysUntilRetire.DATA}} 天哦
-🎊 今年剩余假期：
-{{remainHolidays.DATA}}
 今天也是元气满满的一天，加油吧！
 ```
 
 天气提醒模板：
+
 ```
 ⏰ 现在是 {{current.DATA}}, 开始播报天气啦~
 🌡 当前气温 {{temperature.DATA}}℃, 体感温度{{apparent_temperature.DATA}}℃
@@ -39,6 +39,13 @@
 🌈 当前空气质量: {{air_quality.DATA}}
 👕 穿衣指数 {{comfort.DATA}}
 🔔 {{suggestion.DATA}}
+```
+
+假期提示模板：
+
+```
+🎊 今年剩余假期：
+{{remainHolidays.DATA}}
 ```
 
 ### 生成并填写配置
@@ -50,7 +57,6 @@ $ mv src/config-example.ts src/config.ts
 ```
 
 然后按照注释填写信息即可。
-
 
 ## Installation
 
