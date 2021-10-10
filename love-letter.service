@@ -1,0 +1,14 @@
+[Unit]
+Description=Love Letter Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/bin/node /root/love-letter/dist/main
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
